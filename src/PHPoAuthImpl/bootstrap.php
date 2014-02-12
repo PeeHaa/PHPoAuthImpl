@@ -25,4 +25,4 @@ $autoloader->register();
 /**
  * Bootstrap the PHPoAuthLib
  */
-require __DIR__ . '/../../vendor/lusitanian/oauth/src/OAuth/bootstrap.php';
+require __DIR__ . '/../../../../lusitanian/oauth/src/OAuth/bootstrap.php';

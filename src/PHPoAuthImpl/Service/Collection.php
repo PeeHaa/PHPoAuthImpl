@@ -43,12 +43,17 @@ class Collection
 
     public function add($name, $key, $secret)
     {
-        $this->services[$name] = $serviceFactory->createService(
+        $this->services[$name] = $this->serviceFactory->createService(
             $name,
             new Credentials($key, $secret, $this->uri->getAbsoluteUri()),
             $this->storage
         );
 
         return $this;
+    }
+
+    public function isAuthenticated($name)
+    {
+        return $this->storage->hasAccessToken($name);
     }
 }
