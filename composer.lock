@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "6ba108762618fef702609be7358f7659",
+    "hash": "5e3d63b066887130d8a1ce319b6251ad",
     "packages": [
         {
             "name": "lusitanian/oauth",
-            "version": "dev-master",
+            "version": "v0.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
-                "reference": "037dfb9837d0ed0968f7b1db5d26c00c61efd882"
+                "reference": "27e375e13e1badcd6dca7fb47b154b3c48fdec0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/037dfb9837d0ed0968f7b1db5d26c00c61efd882",
-                "reference": "037dfb9837d0ed0968f7b1db5d26c00c61efd882",
+                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/27e375e13e1badcd6dca7fb47b154b3c48fdec0c",
+                "reference": "27e375e13e1badcd6dca7fb47b154b3c48fdec0c",
                 "shasum": ""
             },
             "require": {
@@ -28,7 +28,6 @@
                 "symfony/http-foundation": "~2.1"
             },
             "suggest": {
-                "ext-openssl": "Allows for usage of secure connections with the stream-based HTTP client.",
                 "predis/predis": "Allows using the Redis storage backend.",
                 "symfony/http-foundation": "Allows using the Symfony Session storage backend."
             },
@@ -67,7 +66,7 @@
                 "oauth",
                 "security"
             ],
-            "time": "2014-02-14 18:06:46"
+            "time": "2013-12-25 20:05:42"
         }
     ],
     "packages-dev": [
@@ -492,9 +491,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "lusitanian/oauth": 20
-    },
+    "stability-flags": [
+
+    ],
     "platform": {
         "php": ">=5.3.0"
     },
