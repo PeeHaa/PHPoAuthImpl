@@ -2,6 +2,7 @@
 
 namespace PHPoAuthImpl\Service;
 
+use PHPoAuthImpl\Di\Factory;
 use OAuth\Common\Http\Uri\UriFactory;
 use OAuth\Common\Storage\Session;
 use OAuth\ServiceFactory;
@@ -26,6 +27,8 @@ class Collection
      */
     private $serviceFactory;
 
+    private $factory;
+
     /**
      * @var array
      */
@@ -41,6 +44,8 @@ class Collection
         $this->storage = new Session();
 
         $this->serviceFactory = new ServiceFactory();
+
+        $this->factory = new Factory;
     }
 
     public function add($name, $key, $secret)
@@ -50,6 +55,8 @@ class Collection
             new Credentials($key, $secret, $this->uri->getAbsoluteUri()),
             $this->storage
         );
+
+        $this->factory->addService($this->services[$this->normalizeName($name)]);
 
         return $this;
     }
@@ -69,7 +76,9 @@ class Collection
 
         $abstractedServiceName = '\\PHPoAuthImpl\\Service\\' . $name . '\\' . implode('\\', $parts);
 
-        $service = new $abstractedServiceName($this->services[$name]);
+        $service = $this->factory->build($abstractedServiceName);
+
+        //$service = new $abstractedServiceName($this->services[$name]);
 
         return $service->$method();
     }
